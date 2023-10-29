@@ -2,6 +2,26 @@
 
 const int WIN_WIDTH = 800, WIN_HEIGHT = 600;
 char* WIN_TITLE = "Raycaster";
+
+typedef struct Input
+{
+  bool left;
+  bool right;
+  bool up;
+  bool down;
+}Input;
+
+typedef struct player_struct
+{
+  float pos_x;
+  float pos_y;
+  float delta_x;
+  float delta_y;
+  float acceleration;
+  float friction;
+  SDL_FRect p_rect;
+  SDL_Color p_color;
+} player;
 /*
   Initializes SDL subsystems and the main
   screen whith a corresponding rendering
@@ -55,3 +75,62 @@ void close_game(SDL_Window **window, SDL_Renderer **renderer)
   SDL_Quit();
 }
 
+void handle_input(SDL_Event event, Input* controller)
+{
+  if (event.type == SDL_KEYDOWN)
+  {
+    switch (event.key.keysym.sym)
+    {
+      case SDLK_LEFT:
+      {
+        controller->left = true;
+        break;
+      }
+      case SDLK_RIGHT:
+      {
+        controller->right = true;
+        break;
+      }
+      case SDLK_UP:
+      {
+        controller->up = true;
+        break;
+      }
+      case SDLK_DOWN:
+      {
+        controller->down = true;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+  else if (event.type == SDL_KEYUP)
+  {
+    switch (event.key.keysym.sym)
+    {
+      case SDLK_LEFT:
+      {
+        controller->left = false;
+        break;
+      }
+      case SDLK_RIGHT:
+      {
+        controller->right = false;
+        break;
+      }
+      case SDLK_UP:
+      {
+        controller->up = false;
+        break;
+      }
+      case SDLK_DOWN:
+      {
+        controller->down = false;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+}
