@@ -1,27 +1,10 @@
 #include <SDL2/SDL.h>
+#include <stdbool.h>
+#include "system.h"
 
 const int WIN_WIDTH = 800, WIN_HEIGHT = 600;
 char* WIN_TITLE = "Raycaster";
 
-typedef struct Input
-{
-  bool left;
-  bool right;
-  bool up;
-  bool down;
-}Input;
-
-typedef struct player_struct
-{
-  float pos_x;
-  float pos_y;
-  float delta_x;
-  float delta_y;
-  float acceleration;
-  float friction;
-  SDL_FRect p_rect;
-  SDL_Color p_color;
-} player;
 /*
   Initializes SDL subsystems and the main
   screen whith a corresponding rendering

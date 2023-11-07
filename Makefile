@@ -5,5 +5,5 @@ SDL2CONFIG=-IC:/msys64/ucrt64/bin/../include -IC:/msys64/ucrt64/bin/../include/S
 DEBUGGER=gdb
 
 all:
-	$(CC) src/main.c -o $(OUTFILE) $(SDL2CONFIG)
+	$(CC) $(wildcard src/*.c) -o $(OUTFILE) $(SDL2CONFIG)
 	./main | cat

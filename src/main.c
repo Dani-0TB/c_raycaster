@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     return -1;
   }
 
-  player p1 = create_player(100,70,10,10,10,0.9); 
+  player p1 = create_player(500,400,10,10,10,0.9); 
   
   float deltaTime = 0;
   Uint32 last_step = SDL_GetTicks();
@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
       // Draw
       draw_game(renderer);
       draw_player(renderer, p1);
+      
       SDL_RenderPresent(renderer);
       last_step = SDL_GetTicks();
     }

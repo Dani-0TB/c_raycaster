@@ -1,3 +1,9 @@
+#include <SDL2/SDL.h>
+#include <stdbool.h>
+#include "system.h"
+#include "render.h"
+#include "entity.h"
+
 /********************
  * Initializes a new player type with predefined 
  * variables and returns the player type.
@@ -59,4 +65,9 @@ void update_player(player* player, Input controller, float deltaTime)
   player->pos_y += player->delta_y;
   player->delta_y *= player->friction;
   player->p_rect.y = player->pos_y;
+}
+
+void set_player(player* player)
+{
+
 }
