@@ -6,7 +6,7 @@ My idea is to learn by doing, I really like wofenstein and doom, so I'm going to
 
 ## Features
 
-For now I'm working on getting to understand the SDL 2 library, it has software rendering for 2D with hardware accelerated graphics too, but It's my goal to eventually move everything to OpenGL when I can, since this library seems to have decent integration with it.
+For now I'm working on getting to understand the SDL 2 library, it has software rendering for 2D with hardware accelerated graphics too, but It's my goal to eventually move everything to OpenGL when I can.
 
 As of the creation of this document, I have implemented a simple system to render a map saved as an array of strings, with a method to get variable framerate with a deltaTime variable to calculate physics or general game logic to be tied to the FPS you are getting thanks to SDL's step system.
 
